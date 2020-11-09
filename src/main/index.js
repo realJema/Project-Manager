@@ -8,7 +8,7 @@ const entryUrl = process.env.NODE_ENV === 'development'
 let window = null;
 
 app.on('ready', () => {
-  window = new BrowserWindow({ width: 700, height: 500, resizable: true });
+  window = new BrowserWindow({ width: 1000, height: 700, resizable: true });
   window.loadURL(entryUrl);
   window.on('closed', () => window = null);
 });

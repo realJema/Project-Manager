@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import CheckList from "./Components/checklist";
+import CheckList from "./checklist";
 import marked from "marked";
 
-class App extends Component {
+class Card extends Component {
   constructor() {
     //   ...arguments stores values of varying lengths
     super(...arguments);
@@ -60,4 +60,4 @@ class App extends Component {
 };
 
 
-export default App;
+export default Card;
