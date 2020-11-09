@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Card from "./card";
 
+import { Col } from 'react-bootstrap';
 class List extends Component {
   render() {
     var cards = this.props.cards.map((card) => {
@@ -16,11 +17,11 @@ class List extends Component {
       );
     });
     return (
-      <div className="list">
-        <h1>{this.props.title}</h1>
-        {cards}
-      </div>
-    );
+      <Col xs={12} sm={12} md={4} className="list">
+			<h1>{this.props.title}</h1>
+			{cards}
+		</Col>
+	);
   }
 }
 
