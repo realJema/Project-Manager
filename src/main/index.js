@@ -9,13 +9,12 @@ const entryUrl = process.env.NODE_ENV === 'development'
 let window = null;
 
 app.on('ready', () => {
-  window = new BrowserWindow({width: 800, height: 600});
+  window = new BrowserWindow({ width: 500, height: 250, transparent: true, frame: false, resizable: true });
   window.loadURL(entryUrl);
   window.on('closed', () => window = null);
 });
 
 app.on('window-all-closed', () => {
-  // mac下比较特殊，所有窗口关闭了也不退出程序
   if(process.platform !== 'darwin') {
     app.quit();
   }
