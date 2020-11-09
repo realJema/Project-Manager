@@ -47,7 +47,6 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "analog-clock-react": "^1.2.1",
     "bootstrap": "^4.5.3",
     "react": "^16.8.5",
     "react-bootstrap": "^1.4.0",
