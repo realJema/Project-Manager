@@ -39,7 +39,6 @@ class Card extends Component {
       width: 7,
       backgroundColor: this.props.color,
     };
-
     return (
       <div className="card">
         <div style={sideColor} />

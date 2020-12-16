@@ -54,6 +54,7 @@
     "react-dom": "^16.8.5",
     "react-drag-drawer": "^3.3.4",
     "react-draggable": "^4.4.3",
+    "recoil": "^0.1.2",
     "rsuite": "^4.8.4"
   }
 }

@@ -1,9 +1,12 @@
 import React from 'react';
-import {render} from 'react-dom';
+import { render } from 'react-dom';
+import { RecoilRoot} from 'recoil';
 
-import {App} from './App';
+import { App } from './App';
 
 render(
-  <App />,
-  document.getElementById('app')
+	<RecoilRoot>
+		<App />
+	</RecoilRoot>,
+	document.getElementById('app')
 );
