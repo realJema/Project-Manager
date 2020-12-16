@@ -27,3 +27,17 @@ export const todoListState = atom({
 		},
 	],
 });
+
+// export const removeTask = selector({
+// 	key: 'removeTask',
+// 	get: ({ get, set }) => {
+//         const todoList = get(todoListState);
+//         for (index = 0; index < todoList.length; ++index) {
+// 			if (todoList.id == passedId) {
+// 				todoList.splice(index, 1); // This will remove the object that first name equals to Test1
+// 				return false; // This will stop the execution of jQuery each loop.
+// 			}
+// 		}
+		
+// 	},
+// });

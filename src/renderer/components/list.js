@@ -26,9 +26,9 @@ function List(props) {
 
 	return (
 		<Col xs={12} sm={12} md={4} className="list">
-			<Row>
-				<h1>{props.title}</h1>
-				<PlusSquare className="ml-4 kanban-plus-btn" onClick={(event) => handleAddCard(props.title)} />
+			<Row >
+				<h1 class="kanban-headers">{props.title}</h1>
+				<PlusSquare className="ml-4 kanban-list-plus" onClick={(event) => handleAddCard(props.title)} />
 			</Row>
 			{props.cards.map((card) => (
 				<Card
