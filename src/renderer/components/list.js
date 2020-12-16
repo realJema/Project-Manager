@@ -1,16 +1,36 @@
-import React, { Component } from "react";
-import Card from "./card";
+import React, { Component } from 'react';
+import Card from './card';
 import { PlusSquare } from 'react-bootstrap-icons';
+import { useSetRecoilState } from 'recoil';
+import { todoListState } from './globalState';
 
 import { Col, Row } from 'react-bootstrap';
-class List extends Component {
-	handleAddCard(title) {
-		console.log('this is the type', title);
+
+function List(props) {
+	const setTodoList = useSetRecoilState(todoListState);
+
+	function handleAddCard(title) {
+		console.log(title.replace(/\s+/g, '-').toLowerCase());
+		setTodoList((oldTodoList) => [
+			...oldTodoList,
+			{
+				id: oldTodoList.length + 1,
+				title: 'Enter New Task',
+				color: '',
+				description: '',
+				status: title.replace(/\s+/g, '-').toLowerCase(),
+				tasks: [],
+			},
+		]);
 	}
 
-	render() {
-		var cards = this.props.cards.map((card) => {
-			return (
+	return (
+		<Col xs={12} sm={12} md={4} className="list">
+			<Row>
+				<h1>{props.title}</h1>
+				<PlusSquare className="ml-4 kanban-plus-btn" onClick={(event) => handleAddCard(props.title)} />
+			</Row>
+			{props.cards.map((card) => (
 				<Card
 					key={card.id}
 					id={card.id}
@@ -19,22 +39,9 @@ class List extends Component {
 					description={card.description}
 					tasks={card.tasks}
 				/>
-			);
-		});
-		return (
-			<Col xs={12} sm={12} md={4} className="list">
-				<Row>
-					<h1>{this.props.title}</h1>
-					<PlusSquare
-						className="ml-4 kanban-plus-btn"
-						onClick={this.handleAddCard.bind(this, this.props.title)}
-					/>
-				</Row>
-				{cards}
-			</Col>
-		);
-	}
+			))}
+		</Col>
+	);
 }
-
 
 export default List;

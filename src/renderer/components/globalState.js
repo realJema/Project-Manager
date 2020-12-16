@@ -18,7 +18,7 @@ export const todoListState = atom({
 			color: '#3A7E28',
 			description:
 				'Code along with the samples in the book. The complete source can be found at [github](https://github.com/pro-react)',
-			status: 'todo',
+			status: 'to-do',
 			tasks: [
 				{ id: 1, name: 'ContactList Example', done: true },
 				{ id: 2, name: 'Kanban Example', done: false },
